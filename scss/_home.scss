@@ -11,6 +11,7 @@
     &__txt{
         @extend %bigTitle;
         padding: 0 24px;
+        margin: unset;
 
         @include mw_sm{
             margin-bottom: 40px;
@@ -26,7 +27,7 @@
 }
 
 .homeInfo{
-    padding: 40px 0;
+    padding-bottom: 40px;
 
     // .homeInfo__title
     &__title {
@@ -35,21 +36,12 @@
 
     // .homeInfo__txt
     &__txt {
-        width: calc(100% / 15%);
-        padding: 40px 32px 48px;
-        color: map-get($txt_color, primary);        
-        font-size: 16px;
-
-        @include mw_sm{
-            width: 100%;
-        }
+        @extend %dice_txt;
 
         li{
-            line-height: 24px;
-            list-style: disc outside;
             font-weight: bold;
 
-            &+li{
+            &+li {
                 margin-top: 24px;
             }
         }
@@ -82,7 +74,6 @@
     }
 
     .normal_input{
-        position: relative;
         flex: 1 1 100%;
         margin-right: 24px;
         
@@ -97,7 +88,7 @@
     // .homeSign_btn
     &_btn{
         flex: none;
-        width: 136px;
+        padding: 0 32px;
         height: 56px;
         background: map-get($bg_color , green);
         color: map-get($txt_color , white);
@@ -118,22 +109,218 @@
 
 
 // problem.html
+.problem{
 
+    // .problem__txt01
+    &__txt01{
+        @include d_f(flex, center, space-between);
+
+        @include mw_sm{
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        
+        img{
+            width: calc(100% / 3);            
+            max-width: 280px;
+
+            @include mw_sm {
+                width: 100%;
+                max-width: none;
+                margin-bottom: 32px;
+            }
+        }
+
+        p{
+            @extend %normal_txt;
+            padding: 0 24px 0 48px;
+
+            @include mw_sm {
+                padding: 0;
+            }
+        }
+    }
+
+    // .problem__txt02
+    &__txt02{
+        margin-bottom: 32px;
+
+        h2{
+            color: map-get($txt_color , secondary);
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        ul{
+            @extend %dice_txt;
+        }
+    }
+
+    // .problem__txt03
+    &__txt03{
+        @extend %normal_txt;
+        margin-bottom: 32px;
+    }
+
+    // .problem__txt04
+    &__txt04{
+        margin-bottom: 32px;
+
+        p{
+            @extend %normal_txt;
+            margin-bottom: 24px;
+        }
+
+        ul{
+            @extend %decimal_txt;
+        }
+    }
+}
 
 
 
 // resources.html
+.resources{
 
+    // .resources
+    &__txt{
+        @extend %normal_txt;
+        padding-top: 48px;
+
+        li{
+            white-space: pre-line;
+            margin-bottom: 24px;
+        }
+    }
+}
 
 
 
 // about.html
+.about{
+    padding-top: 40px;
 
+    // .about__txt01
+    &__txt01{
+        @extend %normal_txt;
+        margin-bottom: 80px;
+    }
+
+    // .about__txt02
+    &__txt02{
+        @include d_f(flex, center, space-between);
+        margin-bottom: 80px;
+        
+        @include mw_sm {
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+        
+        img {
+            width: calc(100% / 3);
+            max-width: 340px;
+    
+            @include mw_sm {
+                width: 100%;
+                max-width: none;
+                margin-bottom: 32px;
+            }
+        }
+
+        ul {
+            @extend %normal_txt;
+            padding: 0 24px 0 48px;
+
+            li + li{
+                margin-top: 40px;
+            }
+
+            @include mw_sm {
+                padding: 0;
+            }
+        }
+    }
+}
 
 
 
 // contact.html
+.contact{
+    max-width: 700px;
+    margin: auto;
 
+    &.--report{
+        padding-top: 56px;
+    }
+
+    h2{
+        color: map-get($txt_color , secondary);
+        font-size: 22px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    label{
+
+        &:not(:first-of-type){
+            margin-top: 24px;
+        }
+    }
+
+    .notice{
+        padding-top: 8px;
+        color: map-get($txt_color , red);
+
+        &:empty{
+            display: none;
+        }
+    }
+
+    .normal_textarea{
+        margin: 24px 0;
+    }
+
+    .send_btn,
+    .login_btn{
+        display: block;
+        padding: 0 32px;
+        height: 56px;
+        background: map-get($bg_color , green);
+        color: map-get($txt_color , white);
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: auto;
+    
+        @include mw_sm {
+            width: 100%;
+        }
+    
+    
+        // 手指效果
+        @include hoverHandler {
+            background: map-get($bg_color , lightgreen);
+        }
+    }
+
+    .login_btn{
+        margin-top: 24px;
+    }
+
+    // contact__txt
+    &__txt{
+        padding: 24px 0;
+        text-align: center;
+
+        code{
+            display: block;
+            margin-bottom: 56px;
+            font-size: 12px;
+        }
+
+        p{
+            margin-bottom: 40px;
+        }
+    }
+}
 
 
 

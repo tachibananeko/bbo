@@ -17,6 +17,8 @@
 
 // 標題字型
 %bigTitle {
+    max-width: 768px;
+    margin: 24px auto;
     text-align: center;
     text-transform: uppercase;
     
@@ -38,16 +40,67 @@
         color: map-get($txt_color, primary);
     }
 }
+.bigTitle{
+    @extend %bigTitle;
+}
 
 %title{
     line-height: 1.4;
-    padding-bottom: 16px;
-    font-weight: bold;
-    font-size: 22px;
+    padding:24px 0 16px;
     color: map-get($txt_color, secondary);
     border-bottom: 1px solid map-get($bg_color, darkgray);
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+.title{
+    @extend %title;
 }
 
+%normal_txt{
+    width: calc(100% / 1.5);
+    line-height: 24px;
+    color: map-get($txt_color, primary);
+    font-size: 16px;
+
+    @include mw_sm {
+        width: 100%;
+    }
+}
+
+%dice_txt {
+    width: calc(100% / 1.5);
+    padding-left: 32px;
+    padding-right: 32px;
+    color: map-get($txt_color, primary);
+    font-size: 16px;
+
+    @include mw_sm {
+        width: 100%;
+    }
+
+    li {
+        line-height: 24px;
+        list-style: disc outside;
+    }
+}
+
+%decimal_txt {
+    width: calc(100% / 1.5);
+    padding-left: 32px;
+    padding-right: 32px;
+    color: map-get($txt_color, primary);
+    font-size: 16px;
+
+    @include mw_sm {
+        width: 100%;
+    }
+
+    li {
+        line-height: 24px;
+        list-style: decimal outside;
+    }
+}
 
 // 動畫
 .active_item {
@@ -84,8 +137,11 @@
 }
 
 .normal_input {
+    position: relative;
+    display: block;
     height: 56px;
     padding: 24px 16px 8px;
+    background: map-get($bg_color, primary);
     outline: 1px solid map-get($bg_color, lightgray);
     
     // on
@@ -120,14 +176,14 @@
 
 .normal_textarea{
     width: 100%;
-    height: 200px;
+    height: 146px;
     padding: 16px;
-    background: map-get($bg_color, white);
-    outline: 1px solid transparent;
+    background: map-get($bg_color, primary);
+    outline: 1px solid lightgray;
 
     // 手指效果
     @include hoverHandler {
-    outline-color: map-get($bg_color, lightgreen);
+        outline-color: map-get($bg_color, green);
     }
 }
 
@@ -138,5 +194,15 @@
 
     @include mw_sm {
         display: block;
+    }
+}
+
+.word_link{
+    text-decoration: underline;
+    color: map-get($txt_color, green);
+
+    // 手指效果
+    @include hoverHandler {
+        color: map-get($txt_color, lightgreen);
     }
 }
