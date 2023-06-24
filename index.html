@@ -6,40 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="renderer" content="webkit">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/self_index.js"></script>
+    <script src="js/router.js?v1.0.5"></script>
     <title>Welcome</title>
 
-    <link rel="stylesheet" href="../style/all.min.css">
+    <link rel="stylesheet" href="style/all.min.css">
 </head>
 
 <body>
     
     <!-- 往下滑陰影 --fix -->
-    <header>
-        <button class="hub_btn"></button>
+    <header id="header">
+        <button id="ham_btn" class="hub_btn"></button>
 
         <!--  小尺寸打開menu --active 當前選項li加上 --on -->
-        <ul class="menu">
+        <ul id="topMenu" class="menu">
             <li>
                 <button class="close_btn"></button>
             </li>
-            <li class="--on">
-                <a href="">Home</a>
-            </li>
-            <li>
-                <a href="">Problem Gambling</a>
-            </li>
-            <li>
-                <a href="">Resources</a>
-            </li>
-            <li>
-                <a href="">About Us</a>
-            </li>
-            <li>
-                <a href="">Contact Us</a>
-            </li>
-            <li>
-                <a href="">Report</a>
-            </li>
+            <li data-href="#/home" class="--on">Home</li>
+            <li data-href="#/problem">Problem Gambling</li>
+            <li data-href="#/resources">Resources</li>
+            <li data-href="#/about">About Us</li>
+            <li data-href="#/contact">Contact Us</li>
+            <li data-href="#/report">Report</li>
         </ul>
     </header>
 
