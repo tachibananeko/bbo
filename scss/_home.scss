@@ -1,0 +1,140 @@
+// home.html
+.homeTop{
+    @include d_f(flex, center, space-between);
+    padding: 32px 0;
+
+    @include mw_sm {
+        flex-direction: column;
+    }
+
+    // .homeTop__txt
+    &__txt{
+        @extend %bigTitle;
+        padding: 0 24px;
+
+        @include mw_sm{
+            margin-bottom: 40px;
+        }
+    }
+    // .homeTop__img
+    &__img{
+        padding: 0 24px;
+        @include mw_sm {
+            padding: 0;
+        }
+    }
+}
+
+.homeInfo{
+    padding: 40px 0;
+
+    // .homeInfo__title
+    &__title {
+        @extend %title;
+    }
+
+    // .homeInfo__txt
+    &__txt {
+        width: calc(100% / 15%);
+        padding: 40px 32px 48px;
+        color: map-get($txt_color, primary);        
+        font-size: 16px;
+
+        @include mw_sm{
+            width: 100%;
+        }
+
+        li{
+            line-height: 24px;
+            list-style: disc outside;
+            font-weight: bold;
+
+            &+li{
+                margin-top: 24px;
+            }
+        }
+    }
+}
+
+.homeSign{
+    @extend %transition;
+    @include d_f(flex, center, space-between);
+    padding: 40px 0;
+
+    @include mw_sm{
+        flex-wrap: wrap;
+        padding: 40px 24px;
+    }
+
+    // .homeSign__title
+    &__title{
+        flex: none;
+        color: map-get($txt_color, secondary);
+        font-size: 32px;
+        margin-right: 24px;
+
+        @include mw_sm{
+            width: 100%;
+            text-align: center;
+            margin-right: 0;
+            margin-bottom: 16px;
+        }
+    }
+
+    .normal_input{
+        position: relative;
+        flex: 1 1 100%;
+        margin-right: 24px;
+        
+
+        @include mw_sm{
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 24px;
+        }
+    }
+
+    // .homeSign_btn
+    &_btn{
+        flex: none;
+        width: 136px;
+        height: 56px;
+        background: map-get($bg_color , green);
+        color: map-get($txt_color , white);
+        font-weight: bold;
+        text-transform: uppercase;
+        
+        @include mw_sm {
+            width: 100%;
+        }
+
+
+        // 手指效果
+        @include hoverHandler {
+            background: map-get($bg_color , lightgreen );
+        }
+    }    
+}
+
+
+// problem.html
+
+
+
+
+// resources.html
+
+
+
+
+// about.html
+
+
+
+
+// contact.html
+
+
+
+
+// report.html

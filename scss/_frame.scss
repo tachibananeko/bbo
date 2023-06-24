@@ -1,0 +1,140 @@
+header{
+    @extend %transition;
+    position: relative;
+    height: 64px;
+    background: map-get($bg_color, secondary);
+    
+    // head固定
+    &.--fix{
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: 3px 3px 15px map-get($bg_color, black_alpha);
+    }
+
+    .hub_btn {
+        @include pos_a(tl, 0);
+        width: 64px;
+        height: 64px;
+        background: url(../images/icon_hub.svg) no-repeat center /32px;
+        filter: invert(24%) sepia(22%) saturate(2045%) hue-rotate(37deg) brightness(98%) contrast(94%);
+
+        display: none;
+
+        @include mw_sm {
+            display: block;
+        }
+
+        // 手指效果
+        @include hoverHandler {
+            filter: invert(63%) sepia(47%) saturate(690%) hue-rotate(34deg) brightness(95%) contrast(86%);
+        }
+    }
+}
+
+.menu{
+    @extend %transition;
+    @include d_f(flex, center, space-between);
+    max-width: 800px;
+    height: 100%;
+    margin: auto;
+
+    // ph畫面
+    @include mw_sm{
+        @include pos_a(trbl, 0);
+        position: fixed;
+        padding: 16px 24px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        font-size: 22px;
+        max-width: none;
+        background: map-get($bg_color , darkgray);
+
+        transform: translate3d(-100%, 0, 0);
+        
+        // ph打開
+        &.--active {
+            transform: translate3d(0%, 0, 0);
+        }
+    }
+
+    li{
+        @extend %transition;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+
+        // ph畫面
+        @include mw_sm {
+            width: 100%;
+            padding: 16px;
+            border-bottom: 1px solid map-get($bg_color , gray);
+            color: map-get($txt_color , white);
+            text-transform: none;
+    
+            &:first-child,
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+
+        // ph關閉按鈕
+        &:first-child{
+            display: none;
+            padding: 0;
+            
+            @include mw_sm {
+                display: block;
+            }
+        }
+
+        &.--on{
+            color: map-get($bg_color, green);
+            font-weight: bold;
+            pointer-events: none;
+
+            @include mw_sm{
+                color: map-get($txt_color , white);
+            }
+        }
+
+        // 手指效果
+        @include hoverHandler {
+            color: map-get($bg_color, lightgreen);
+        }
+
+        a{
+            display: block;
+        }
+    }
+
+    .close_btn{
+        display: block;
+        width: 40px;
+        height: 40px;
+        background: url(../images/icon_close.svg) no-repeat center /32px;
+        margin-left: auto;
+        filter: invert(1);
+        
+        // 手指效果
+        @include hoverHandler {
+            filter: invert(63%) sepia(47%) saturate(690%) hue-rotate(34deg) brightness(95%) contrast(86%);
+        }
+    }
+}
+
+main{
+    max-width: 1160px;
+    min-height: 100%;
+}
+
+footer{
+    padding: 24px 0;
+    
+    .foot{
+        padding-top: 24px;
+        border-top: 1px solid map-get($bg_color , lightgray);
+        color: map-get($txt_color , gray);
+    }
+}
