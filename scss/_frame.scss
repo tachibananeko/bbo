@@ -1,17 +1,12 @@
 header{
     @extend %transition;
-    position: relative;
+    position: sticky;
+    top: 0;
     height: 64px;
     background: map-get($bg_color, secondary);
-    
-    // head固定
-    &.--fix{
-        position: fixed;
-        width: 100%;
-        top: 0;
-        left: 0;
-        box-shadow: 3px 3px 15px map-get($bg_color, black_alpha);
-    }
+    box-shadow: 0 0 10px map-get($bg_color, gray_alpha);
+
+    z-index: 9;
 
     .hub_btn {
         @include pos_a(tl, 0);
@@ -40,6 +35,8 @@ header{
     height: 100%;
     margin: auto;
 
+    z-index: 10;
+
     // ph畫面
     @include mw_sm{
         @include pos_a(trbl, 0);
@@ -61,6 +58,7 @@ header{
     }
 
     li{
+        @extend %hand;
         @extend %transition;
         letter-spacing: 2px;
         text-transform: uppercase;
@@ -127,6 +125,7 @@ header{
 main{
     max-width: 1160px;
     min-height: 100%;
+    margin: auto;
 }
 
 footer{
