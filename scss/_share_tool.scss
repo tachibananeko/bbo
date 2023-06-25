@@ -162,14 +162,12 @@
 
     span {
         @extend %transition;
-        @include pos_a(tbl, 0, 0, 16px);
+        @include pos_a(tl, 18px, 16px);
         height: 20px;
-        margin: auto;
 
         @at-root .--on span {
             font-size: 12px;
             top: 8px;
-            bottom: auto;
         }
     }
 }
