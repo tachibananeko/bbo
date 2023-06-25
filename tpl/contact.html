@@ -68,6 +68,15 @@
         </div>
     </div>
 
+    <script>
+        $('.normal_input input').focus(function(){
+            $(this).parent('label').addClass('--on')
+        })
+        $('.normal_input input').blur(function(){
+            $(this).parent('label').removeClass('--on')
+        })
+    </script>
+
 </body>
 
 </html>
