@@ -7,10 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="renderer" content="webkit">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/self_index.js"></script>
     <script src="js/router.js?v1.0.5"></script>
     <title>Welcome</title>
-
     <link rel="stylesheet" href="style/all.min.css">
 </head>
 
@@ -25,7 +23,7 @@
             <li>
                 <button class="close_btn"></button>
             </li>
-            <li data-href="#/home" class="--on">Home</li>
+            <li data-href="#/home">Home</li>
             <li data-href="#/problem">Problem Gambling</li>
             <li data-href="#/resources">Resources</li>
             <li data-href="#/about">About Us</li>
@@ -37,12 +35,36 @@
 
 
     <!-- 主要資訊 -->
-    <main class="pd_auto"></main>
+    <main class="pd_auto" id="content"></main>
     <!-- 主要資訊 end -->
 
     <footer class="pd_auto">
         <div class="foot">Copyright © 2023 Full Advantage Investments Limited - All Rights Reserved.</div>
     </footer>
+
+    <script>
+        // topMenu 點擊切換路由
+        $('#topMenu li').click(function(){
+            if($(this).attr('data-href') != undefined){
+                location.href = $(this).attr('data-href');
+                $('#topMenu').removeClass('--active');
+            }  
+        })
+        
+        // 小尺寸打開 / 關閉menu
+        $('#ham_btn').click(function(){
+            $('#topMenu').addClass('--active')
+        })
+        $('#topMenu .close_btn').click(function(){
+            $('#topMenu').removeClass('--active');
+        })
+
+        // 畫面大小變更時移除--active
+        $(window).resize(function(){
+            $('#topMenu').removeClass('--active');
+        })
+    </script>
+
 
 </body>
 
