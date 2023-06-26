@@ -1,14 +1,9 @@
 // 寬度設定
 .pd_auto {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 64px;
+    padding-right: 64px;
 
-    @include mw_lg {
-        padding-left: 64px;
-        padding-right: 64px;
-    }
-
-    @include mw_sm {
+    @include mw_xs {
         padding-left: 24px;
         padding-right: 24px;
     }
