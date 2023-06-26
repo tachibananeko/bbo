@@ -325,6 +325,29 @@
 
 
 // report.html
+.lang{
+    @include d_f(flex, center, center);
+    width: 100%;
+    font-size: 16px;
+
+    li{
+        @extend %hand;
+        padding: 24px 0;
+        margin: 0 20px;
+        color: map-get($txt_color, green);
+
+        &.--on{
+            pointer-events: none;
+            color: map-get($txt_color, darkgreen);
+            text-decoration: underline;
+        }
+
+        @include hoverHandler{
+            color: map-get($txt_color, darkgreen);
+        }
+    }
+}
+
 .remberArea{
     @include d_f(flex, center, 0);
     margin-top: 24px;
