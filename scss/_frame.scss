@@ -1,12 +1,19 @@
 header{
     @extend %transition;
-    position: sticky;
-    top: 0;
     height: 64px;
     background: map-get($bg_color, secondary);
-    box-shadow: 0 0 10px map-get($bg_color, gray_alpha);
+    
 
     z-index: 9;
+
+    // head固定
+    &.--fix {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        box-shadow: 0 0 10px map-get($bg_color, gray_alpha);
+    }
 
     .hub_btn {
         @include pos_a(tl, 0);
