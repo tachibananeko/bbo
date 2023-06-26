@@ -26,16 +26,30 @@
         <h2>LOGIN</h2>
 
         <label class="normal_input">
-            <input type="text">
+            <input type="text" autocapitalize="off" autocorrect="off" autocomplete="username">
             <span>Account*</span>
         </label>
         <code class="notice"></code>
         
         <label class="normal_input">
-            <input type="text">
+            <input type="password" autocomplete="new-password">
             <span>Password*</span>
         </label>
         <code class="notice"></code>
+
+        <label class="normal_input">
+            <input type="password" autocomplete="off">
+            <span>Safe Code*</span>
+        </label>
+        <code class="notice"></code>
+
+        <div class="remberArea">
+            <label class="checkbox_style">
+                <input type="checkbox">
+                <span></span>
+                Remember Me
+            </label>
+        </div>
         
         <button class="login_btn">LOGIN</button>
     </div>

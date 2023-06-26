@@ -325,3 +325,11 @@
 
 
 // report.html
+.remberArea{
+    @include d_f(flex, center, 0);
+    margin-top: 24px;
+    
+    .checkbox_style{
+        @include checktick(20px, 2px, 2px, map-get($bg_color , green));
+    }
+}

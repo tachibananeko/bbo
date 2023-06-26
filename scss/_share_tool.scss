@@ -199,3 +199,41 @@
         color: map-get($txt_color, lightgreen);
     }
 }
+
+// 勾勾
+@mixin checktick($box, $xy, $boder, $bg) {
+    @extend %hand;
+    @include d_f(flex, center, flex-start);
+    position: relative;
+
+    input {
+        display: none;
+    }
+
+    span {
+        position: relative;
+        display: inline-block;
+        width: $box;
+        height: $box;
+        background: $bg;
+        border: 1px solid map-get($bg_color, secondary);
+        margin-right: 5px;
+
+        &::before {
+            @include pos_a(tl, $xy);
+            content: none;
+            display: block;
+            width: calc($box / 2);
+            height: calc($box / 3);
+            border-width: 0 0 $boder $boder;
+            border-style: solid;
+            border-color: map-get($bg_color, white);
+            transform: rotate(-48deg);
+        }
+    }
+
+    input:checked+span::before {
+        content: '';
+    }
+
+}
