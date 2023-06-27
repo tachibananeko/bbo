@@ -9,7 +9,7 @@ Router.prototype.route = function(path, callback) {
 };
 Router.prototype.refresh = function() {
     // 路由清單
-    let routerList = ['', 'home','problem','resources','about','contact','report'];
+    let routerList = ['', 'home', 'problem', 'resources', 'about', 'contact', 'report', 'member'];
 
     //获取到相应的hash值
     let index = routerList.indexOf(location.hash.slice(2))
@@ -60,6 +60,10 @@ Router.route('/contact', function() {
 Router.route('/report', function() {
     mainInclude('tpl/report.html');
     topmenu_highlight(6);
+});
+Router.route('/member', function () {
+    mainInclude('tpl/member.html');
+    topmenu_highlight(7);
 });
 
 
