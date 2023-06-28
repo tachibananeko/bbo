@@ -1,7 +1,10 @@
 header{
     @extend %transition;
+    position: sticky;
+    top: 0;
     height: 64px;
     background: map-get($bg_color, secondary);
+    box-shadow: 0 0 10px map-get($bg_color, gray_alpha);
     
 
     z-index: 9;
